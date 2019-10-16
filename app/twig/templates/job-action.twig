@@ -1,0 +1,137 @@
+<div data-c-card data-c-background="white(100)" data-c-radius="rounded" data-tc-status="{{ status }}" data-c-padding="all(normal)" data-c-margin="bottom(normal)"{% if status == "in review" or status == "approved" or status == "closed" %}data-c-border="left(thick, solid, stop)"{% endif %}>
+    <div data-c-grid="gutter middle">
+        <div data-c-grid-item="tl(5of10)">
+            <h2 data-c-margin="bottom(normal)" data-c-font-size="h3"><span data-c-tag="c1" data-c-font-size="small" data-c-radius="pill" data-c-margin="right(half)">{{ status|title }}</span>CS1 - <span data-c-font-weight="bold">Front-end Developer</span></h2>
+            <p data-c-font-size="small" data-c-margin="top(normal)">
+                {% if status == "draft" %}
+                    <a href="" title="" data-c-margin="right(half)">Edit Job</a>
+                    <a href="" title="" data-c-margin="right(half)">Preview Poster</a>
+                    <a href="" title="" data-c-margin="right(half)">Edit Screening Plan</a>
+                    <span data-c-color="gray" data-c-margin="right(half)">No Applicants</span>
+                    <a href="" title="" data-c-margin="right(half)">Delete Poster</a>
+                {% elseif status == "in review" %}
+                    <a href="" title="" data-c-margin="right(half)">Edit Job</a>
+                    <a href="" title="" data-c-margin="right(half)">Preview Poster</a>
+                    <a href="" title="" data-c-margin="right(half)">Edit Screening Plan</a>
+                    <span data-c-color="gray" data-c-margin="right(half)">No Applicants</span>
+                    <a href="" title="" data-c-margin="right(half)">Delete Poster</a>
+                {% elseif status == "approved" %}
+                    <span data-c-color="gray" data-c-margin="right(half)">Edit Job</span>
+                    <a href="" title="" data-c-margin="right(half)">Preview Poster</a>
+                    <a href="" title="" data-c-margin="right(half)">Edit Screening Plan</a>
+                    <span data-c-color="gray" data-c-margin="right(half)">No Applicants</span>
+                    <a href="" title="" data-c-margin="right(half)">Delete Poster</a>
+                {% elseif status == "published" %}
+                    <span data-c-color="gray" data-c-margin="right(half)">Edit Job</span>
+                    <a href="" title="" data-c-margin="right(half)">View Poster</a>
+                    <a href="" title="" data-c-margin="right(half)">Edit Screening Plan</a>
+                    <span data-c-color="gray" data-c-margin="right(half)">12 Applicants</span>
+                    <span data-c-color="gray" data-c-margin="right(half)">Delete Poster</span>
+                {% elseif status == "closed" %}
+                    <span data-c-color="gray" data-c-margin="right(half)">Edit Job</span>
+                    <a href="" title="" data-c-margin="right(half)">View Poster</a>
+                    <a href="" title="" data-c-margin="right(half)">View Screening Plan</a>
+                    <a href="" title="" data-c-margin="right(half)">34 Applicants</a>
+                    <span data-c-color="gray" data-c-margin="right(half)">Delete Poster</span>
+                {% elseif status == "complete" %}
+                    <span data-c-color="gray" data-c-margin="right(half)">Edit Job</span>
+                    <a href="" title="" data-c-margin="right(half)">View Poster</a>
+                    <a href="" title="" data-c-margin="right(half)">View Screening Plan</a>
+                    <span data-c-color="gray" data-c-margin="right(half)">5 Applicants</span>
+                    <span data-c-color="gray" data-c-margin="right(half)">Delete Poster</span>
+                {% endif %}
+            </p>
+        </div>
+        <div data-c-grid-item="tl(3of10)">
+            <div data-c-grid="gutter">
+                {% if status == "draft" %}
+                    <div data-c-grid-item="base(1of2)">
+                        <p data-c-font-size="small">Created: 2018/Mar/01</p>
+                        <p data-c-font-size="small">Time with You: 2 days</p>
+                        <p data-c-font-size="small" data-c-color="gray">Time with HR: N/A</p>
+                    </div>
+                    <div data-c-grid-item="base(1of2)">
+                        <p data-c-font-size="small" data-c-color="gray">Published: N/A</p>
+                        <p data-c-font-size="small" data-c-color="gray">Closes: N/A</p>
+                        <p data-c-font-size="small" data-c-color="gray">Live for: N/A</p>
+                    </div>
+                {% elseif status == "in review" %}
+                    <div data-c-grid-item="base(1of2)">
+                        <p data-c-font-size="small">Created: 2018/Mar/01</p>
+                        <p data-c-font-size="small">Time with You: 3 days</p>
+                        <p data-c-font-size="small">Time with HR: 5 days</p>
+                    </div>
+                    <div data-c-grid-item="base(1of2)">
+                        <p data-c-font-size="small" data-c-color="gray">Published: N/A</p>
+                        <p data-c-font-size="small" data-c-color="gray">Closes: N/A</p>
+                        <p data-c-font-size="small" data-c-color="gray">Live for: N/A</p>
+                    </div>
+                {% elseif status == "approved" %}
+                    <div data-c-grid-item="base(1of2)">
+                        <p data-c-font-size="small">Created: 2018/Mar/01</p>
+                        <p data-c-font-size="small">Time with You: 3 days</p>
+                        <p data-c-font-size="small">Time with HR: 5 days</p>
+                    </div>
+                    <div data-c-grid-item="base(1of2)">
+                        <p data-c-font-size="small">Goes Live: 2020/Jan/01</p>
+                        <p data-c-font-size="small">Closes: 2020/Jan/29</p>
+                        <p data-c-font-size="small">Live for: 29 days</p>
+                    </div>
+                {% elseif status == "published" %}
+                    <div data-c-grid-item="base(1of2)">
+                        <p data-c-font-size="small">Created: 2018/Mar/01</p>
+                        <p data-c-font-size="small">Time with You: 3 days</p>
+                        <p data-c-font-size="small">Time with HR: 5 days</p>
+                    </div>
+                    <div data-c-grid-item="base(1of2)">
+                        <p data-c-font-size="small">Published: 2018/Feb/01</p>
+                        <p data-c-font-size="small">Closes: 2018/Feb/10</p>
+                        <p data-c-font-size="small">Live for: 9 more days</p>
+                    </div>
+                {% elseif status == "closed" %}
+                    <div data-c-grid-item="base(1of2)">
+                        <p data-c-font-size="small">Created: 2018/Mar/01</p>
+                        <p data-c-font-size="small">Time with You: 3 days</p>
+                        <p data-c-font-size="small">Time with HR: 5 days</p>
+                    </div>
+                    <div data-c-grid-item="base(1of2)">
+                        <p data-c-font-size="small">Published: 2018/Feb/01</p>
+                        <p data-c-font-size="small">Closed: 2018/Feb/10</p>
+                        <p data-c-font-size="small" data-c-color="gray">Live for: Closed</p>
+                    </div>
+                {% elseif status == "complete" %}
+                    <div data-c-grid-item="base(1of2)">
+                        <p data-c-font-size="small">Created: 2018/Mar/01</p>
+                        <p data-c-font-size="small">Time with You: 3 days</p>
+                        <p data-c-font-size="small">Time with HR: 5 days</p>
+                    </div>
+                    <div data-c-grid-item="base(1of2)">
+                        <p data-c-font-size="small">Published: 2018/Feb/01</p>
+                        <p data-c-font-size="small">Closed: 2018/Feb/10</p>
+                        <p data-c-font-size="small" data-c-color="gray">Live for: Closed</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        <div data-c-grid-item="tl(2of10)" data-c-align="base(center)">
+            {% if status == "draft" %}
+                <a href="" title="" data-c-button="solid(c1)" data-c-radius="rounded">
+                    Edit Draft
+                </a>
+            {% elseif status == "in review" %}
+                <a href="" title="" data-c-button="solid(c1)" data-c-radius="rounded">
+                    Preview &amp; Submit
+                </a>
+            {% elseif status == "approved" or status == "published" %}
+                <a href="" title="" data-c-button="solid(c1)" data-c-radius="rounded">
+                    Edit Screening Plan
+                </a>
+            {% elseif status == "closed" %}
+                <a href="" title="" data-c-button="solid(c1)" data-c-radius="rounded">
+                    View 34 Applicants
+                </a>
+            {% elseif status == "complete" %}
+            {% endif %}
+        </div>
+    </div>
+</div>
