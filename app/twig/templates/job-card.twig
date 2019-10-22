@@ -1,0 +1,29 @@
+<div data-c-grid-item="tp(1of2) tl(1of3) equal-col" class="tc-hr-job-card">
+    <div data-c-card data-c-radius="rounded" data-c-background="white(100)">
+        <a href="" title="">
+            <div data-c-background="black(90)" data-c-padding="all(normal)">
+                <p data-c-font-size="h4" data-c-colour="white" data-c-margin="bottom(quarter)" data-c-font-style="underline">{{ job.classification }} - {{ job.title }}</p>
+                <p data-c-colour="white" data-c-font-size="small">Created on: {{ job.created }}</p>
+            </div>
+            <div data-c-padding="all(normal)">
+                <div data-c-grid="gutter middle">
+                    <div data-c-grid-item="base(2of3)">
+                        <p data-c-color="black"><span data-c-color="c2">Hiring Manager:</span> {{ job.manager }}</p>
+                    </div>
+                    <div data-c-grid-item="base(1of3)" data-c-align="base(right)">
+                        <div data-c-tag="c1" data-c-font-size="small" data-c-radius="pill">
+                            {{ job.status|title }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-c-padding="all(normal)" data-c-border="top(thin, solid, gray)">
+                {% if job.advisers is empty %}
+                    <p data-c-color="stop">Unclaimed</p>
+                {% else %}
+                    <p data-c-color="black"><span data-c-color="c2">HR Advisers:</span> {% for adviser in job.advisers %}{{ adviser }}{% if loop.last %}{% else %}, {% endif %}{% endfor %}</p>
+                {% endif %}
+            </div>
+        </a>
+    </div>
+</div>

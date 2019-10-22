@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        {# Site Title #}
+        <title>Talent Cloud: HR Adviser Dashboard</title>
+        
+        {# Charset #}
+        <meta charset="utf-8" />
+
+        {# Compatibility #}
+        <meta
+            http-equiv="X-UA-Compatible"
+            content="IE=edge">
+
+        {# Viewport #}
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0">
+
+        {# Generic Google Fonts #}
+        <link
+            href="https://fonts.googleapis.com/css?family=Euphoria+Script|Open+Sans:400,400i,600,600i,800,800i&amp;subset=latin-ext"
+            rel="stylesheet">
+
+        {# Material Icons #}
+        <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet">
+
+        {# Your CSS #}
+        <link 
+            async 
+            href="$ROOT/css/app.css"
+            rel="stylesheet">
+
+        {# Favicons #}
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#b91d47">
+        <meta name="msapplication-TileColor" content="#b91d47">
+        <meta name="theme-color" content="#b91d47">
+
+    </head>
+
+    {# Playground's Body #}
+    <body data-clone>
+        
+        <div data-c-overlay="black(90)" data-c-padding="tb(triple)" style="background-image: url('https://images.unsplash.com/photo-1556742400-b5b7c5121f99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80');">
+            <div data-c-container="large" data-c-align="base(center) tl(left)">
+                <h1 data-c-font-size="h2" data-c-color="white">My Job Actions</h1>
+                <div data-c-color="white" data-c-margin="top(double)">
+                    <nav
+                        aria-label="breadcrumb"
+                        data-c-breadcrumbs>
+                        <ol>
+                            <li>
+                                <a
+                                    href="#link-to-page"
+                                    title="This is the title of the page link.">
+                                    Talent Cloud
+                                </a>
+                                <i class="material-icons">arrow_right</i>
+                            </li>
+                            <li>
+                                <span aria-current="page">My Job Actions</span>
+                                <i class="material-icons">arrow_right</i>
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <div data-c-background="gray(10)">
+            <div data-c-container="large" data-c-padding="tb(triple)">
+                <p>Welcome! Introductory copy that explains how this page works, and what an HR adviser needs to do to claim a job action as their own. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium ducimus laboriosam sequi, quis autem minima esse quasi aspernatur vero provident quos eligendi, ea officia exercitationem. Obcaecati impedit quae veritatis corrupti!</p>
+                <h2 data-c-font-size="h2" data-c-margin="top(triple) bottom(normal)">My Job Actions<h2>
+                {% include "../templates/job-action.twig" with {"status": "draft"} %}
+                {% include "../templates/job-action.twig" with {"status": "in review"} %}
+                {% include "../templates/job-action.twig" with {"status": "published"} %}
+                <div data-c-accordion-group data-c-margin="top(triple)">
+                    <div
+                        data-c-accordion>
+                        <button
+                            aria-expanded="false"
+                            data-c-accordion-trigger
+                            tabindex="0"
+                            type="button">
+                            <div>
+                                <h3 data-c-font-size="h3">My Completed Job Actions</h3>
+                            </div>
+                            <span data-c-visibility="invisible">
+                                Click to view...
+                            </span>
+                            <p data-c-accordion-add data-c-font-style="underline" data-c-color="c2">Show</p>
+                            <p data-c-accordion-remove data-c-font-style="underline" data-c-color="c2">Hide</p>
+                        </button>
+                        <div
+                            aria-hidden="true"
+                            data-c-accordion-content
+                            data-c-padding="top(double)">
+                            <div>
+                                {% include "../templates/job-action.twig" with {"status": "complete"} %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h2 data-c-font-size="h2" data-c-margin="top(triple) bottom(double)">All Jobs in Treasury Board of Canada Secretariat</h2>
+                <div data-c-grid="gutter">
+                    {# Filters #}
+                    <div data-c-input="button" data-c-grid-item="tl(1of2)">
+                        <label for="WB2">Search by Manager Name</label>
+                        <span>Required</span>
+                        <div data-c-grid>
+                            <input
+                                data-c-grid-item="fit"
+                                id="WB2"
+                                placeholder="e.g. Clark Kent"
+                                type="text"/>
+                            <button
+                                data-c-button="solid(c1)"
+                                type="button">
+                                Search
+                            </button>
+                        </div>
+                        <span>This input has an error.</span>
+                    </div>
+                    <div data-c-input="select" data-c-grid-item="tl(1of4)">
+                        <label for="SEL2">Filter by Classification</label>
+                        <span>Required</span>
+                        <div>
+                            <i class="material-icons">
+                                arrow_drop_down
+                            </i>
+                            <select id="SEL2">
+                                <option disabled selected>Select a classification...</option>
+                                <option>AS</option>
+                                <option>CS</option>
+                                <option>ET</option>
+                                <option>FG</option>
+                            </select>
+                        </div>
+                        <span>This input has an error.</span>
+                    </div>
+                    <div data-c-input="select" data-c-grid-item="tl(1of4)">
+                        <label for="SEL2">Filter by Status</label>
+                        <span>Required</span>
+                        <div>
+                            <i class="material-icons">
+                                arrow_drop_down
+                            </i>
+                            <select id="SEL2">
+                                <option disabled selected>Select a status...</option>
+                                <option>Claimed</option>
+                                <option>Unclaimed</option>
+                            </select>
+                        </div>
+                        <span>This input has an error.</span>
+                    </div>
+                    {# Jobs #}
+                    {% set depJobs = {
+                        "0": {
+                            "title": "Front-end Developer",
+                            "classification": "CS01",
+                            "manager": "Rebecca Appleby",
+                            "created": "2019-05-02",
+                            "status": "draft",
+                            "advisers": {}
+                        },
+                        "1": {
+                            "title": "Executive Assisstant",
+                            "classification": "AS02",
+                            "manager": "Jeanie Fereau",
+                            "created": "2019-03-12",
+                            "status": "published",
+                            "advisers": {
+                                "0": "Caitlyn Summers"
+                            }
+                        },
+                        "2": {
+                            "title": "Business Analyst",
+                            "classification": "ET03",
+                            "manager": "Robin Browne",
+                            "created": "2019-12-02",
+                            "status": "in review",
+                            "advisers": {}
+                        },
+                        "3": {
+                            "title": "Long-term Care Specialist",
+                            "classification": "FG05",
+                            "manager": "Braeden McDoogal",
+                            "created": "2019-05-14",
+                            "status": "draft",
+                            "advisers": {
+                                "0": "Caitlyn Summers",
+                                "1": "Jack Little"
+                            }
+                        },
+                        "4": {
+                            "title": "Digital Product Designer",
+                            "classification": "CS03",
+                            "manager": "Amelie Lachance",
+                            "created": "2019-07-24",
+                            "status": "in review",
+                            "advisers": {}
+                        }
+                    } %}
+                    {% for job in depJobs %}
+                        {% include "../templates/job-card.twig" %}
+                    {% endfor %}
+                </div>
+
+            </div>
+        </div>
+
+        <div data-c-background="black(100)" data-c-padding="tb(triple)">
+            <div data-c-container="large" data-c-align="base(center)">
+                <h1 data-c-font-size="h2" data-c-font-weight="bold" data-c-color="white">FOOTER</h1>
+            </div>
+        </div>
+
+        {# Clone's JavaScript #}
+        <script src="$ROOT/js/clone/clone.min.js"></script>
+
+        {# Your JavaScript #}
+        <script src="$ROOT/js/app.js"></script>
+
+    </body>
+
+</html>
