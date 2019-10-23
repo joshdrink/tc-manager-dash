@@ -125,4 +125,14 @@ $clone-grid-gutter: $clone-padding;
             text-decoration: none;
         }
     }
+    .pulse {
+        span {
+            animation: pulse 1s ease infinite;
+        }
+    }
+}
+@keyframes pulse {
+    0%   {color: $clone-black}
+    50%  {color: $clone-stop}
+    100% {color: $clone-black}
 }

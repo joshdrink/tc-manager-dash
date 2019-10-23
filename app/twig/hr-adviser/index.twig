@@ -80,9 +80,47 @@
             <div data-c-container="large" data-c-padding="tb(triple)">
                 <p>Welcome! Introductory copy that explains how this page works, and what an HR adviser needs to do to claim a job action as their own. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium ducimus laboriosam sequi, quis autem minima esse quasi aspernatur vero provident quos eligendi, ea officia exercitationem. Obcaecati impedit quae veritatis corrupti!</p>
                 <h2 data-c-font-size="h2" data-c-margin="top(triple) bottom(normal)">My Job Actions<h2>
-                {% include "../templates/job-action.twig" with {"status": "draft"} %}
-                {% include "../templates/job-action.twig" with {"status": "in review"} %}
-                {% include "../templates/job-action.twig" with {"status": "published"} %}
+                {% set myJobs = {
+                    "0": {
+                        "type": "hr",
+                        "attention": true,
+                        "hrTime": "2 Days",
+                        "hmTime": "2 Days",
+                        "title": "Front-end Developer",
+                        "classification": "CS01",
+                        "manager": "Rebecca Appleby",
+                        "created": "2019-MAY-02",
+                        "status": "draft",
+                        "advisers": {}
+                    },
+                    "1": {
+                        "type": "hr",
+                        "attention": false,
+                        "hrTime": "12 Days",
+                        "hmTime": "8 Days",
+                        "title": "Cupcake Baker",
+                        "classification": "BK01",
+                        "manager": "Cassandra Kane",
+                        "created": "2019-FEB-13",
+                        "status": "published",
+                        "advisers": {}
+                    },
+                    "2": {
+                        "type": "hr",
+                        "attention": false,
+                        "hrTime": "4 Days",
+                        "hmTime": "3 Days",
+                        "title": "Business Analyst",
+                        "classification": "EY02",
+                        "manager": "Franklin Morrison",
+                        "created": "2019-JUN-23",
+                        "status": "in review",
+                        "advisers": {}
+                    }
+                } %}
+                {% for job in myJobs %}
+                    {% include "../templates/job-action.twig" with {"job": job} %}
+                {% endfor %}
                 <div data-c-accordion-group data-c-margin="top(triple)">
                     <div
                         data-c-accordion>
@@ -105,7 +143,47 @@
                             data-c-accordion-content
                             data-c-padding="top(double)">
                             <div>
-                                {% include "../templates/job-action.twig" with {"status": "complete"} %}
+                                {% set myComJobs = {
+                                    "0": {
+                                        "type": "hr",
+                                        "attention": false,
+                                        "hrTime": "13 Days",
+                                        "hmTime": "4 Days",
+                                        "title": "Back-end Technician",
+                                        "classification": "CS03",
+                                        "manager": "Rebecca Appleby",
+                                        "created": "2019-FEB-15",
+                                        "status": "complete",
+                                        "advisers": {}
+                                    },
+                                    "1": {
+                                        "type": "hr",
+                                        "attention": false,
+                                        "hrTime": "10 Days",
+                                        "hmTime": "6 Days",
+                                        "title": "Integrated Researcher",
+                                        "classification": "RE02",
+                                        "manager": "Cassandra Kane",
+                                        "created": "2019-NOV-13",
+                                        "status": "complete",
+                                        "advisers": {}
+                                    },
+                                    "2": {
+                                        "type": "hr",
+                                        "attention": false,
+                                        "hrTime": "8 Days",
+                                        "hmTime": "2 Days",
+                                        "title": "Youth Manager",
+                                        "classification": "YO02",
+                                        "manager": "Franklin Morrison",
+                                        "created": "2019-MAR-23",
+                                        "status": "complete",
+                                        "advisers": {}
+                                    }
+                                } %}
+                                {% for job in myComJobs %}
+                                    {% include "../templates/job-action.twig" with {"job": job} %}
+                                {% endfor %}
                             </div>
                         </div>
                     </div>
@@ -168,7 +246,7 @@
                             "title": "Front-end Developer",
                             "classification": "CS01",
                             "manager": "Rebecca Appleby",
-                            "created": "2019-05-02",
+                            "created": "2019-MAY-02",
                             "status": "draft",
                             "advisers": {}
                         },
@@ -176,7 +254,7 @@
                             "title": "Executive Assisstant",
                             "classification": "AS02",
                             "manager": "Jeanie Fereau",
-                            "created": "2019-03-12",
+                            "created": "2019-MAR-12",
                             "status": "published",
                             "advisers": {
                                 "0": "Caitlyn Summers"
@@ -186,7 +264,7 @@
                             "title": "Business Analyst",
                             "classification": "ET03",
                             "manager": "Robin Browne",
-                            "created": "2019-12-02",
+                            "created": "2019-DEC-02",
                             "status": "in review",
                             "advisers": {}
                         },
@@ -194,7 +272,7 @@
                             "title": "Long-term Care Specialist",
                             "classification": "FG05",
                             "manager": "Braeden McDoogal",
-                            "created": "2019-05-14",
+                            "created": "2019-MAY-14",
                             "status": "draft",
                             "advisers": {
                                 "0": "Caitlyn Summers",
@@ -205,7 +283,7 @@
                             "title": "Digital Product Designer",
                             "classification": "CS03",
                             "manager": "Amelie Lachance",
-                            "created": "2019-07-24",
+                            "created": "2019-JUL-24",
                             "status": "in review",
                             "advisers": {}
                         }

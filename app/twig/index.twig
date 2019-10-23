@@ -54,12 +54,95 @@
 
             <div data-c-container="large">
 
-                {% include "templates/job-action.twig" with {"status": "draft"} %}
-                {% include "templates/job-action.twig" with {"status": "in review"} %}
-                {% include "templates/job-action.twig" with {"status": "approved"} %}
-                {% include "templates/job-action.twig" with {"status": "published"} %}
-                {% include "templates/job-action.twig" with {"status": "closed"} %}
-                {% include "templates/job-action.twig" with {"status": "complete"} %}
+                {% set myJobs = {
+                    "0": {
+                        "type": "hm",
+                        "attention": false,
+                        "hrTime": "2 Days",
+                        "hmTime": "2 Days",
+                        "title": "Front-end Developer",
+                        "classification": "CS01",
+                        "manager": "Rebecca Appleby",
+                        "created": "2019-MAY-02",
+                        "published": null,
+                        "closed": null,
+                        "status": "draft",
+                        "advisers": {}
+                    },
+                    "1": {
+                        "type": "hm",
+                        "attention": true,
+                        "hrTime": "12 Days",
+                        "hmTime": "8 Days",
+                        "title": "Cupcake Baker",
+                        "classification": "BK01",
+                        "manager": "Cassandra Kane",
+                        "created": "2019-FEB-13",
+                        "published": null,
+                        "closed": null,
+                        "status": "in review",
+                        "advisers": {}
+                    },
+                    "2": {
+                        "type": "hm",
+                        "attention": false,
+                        "hrTime": "4 Days",
+                        "hmTime": "3 Days",
+                        "title": "Business Analyst",
+                        "classification": "EY02",
+                        "manager": "Franklin Morrison",
+                        "created": "2019-JUN-23",
+                        "published": "2019-DEC-21",
+                        "closed": "2020-JAN-04",
+                        "status": "approved",
+                        "advisers": {}
+                    },
+                    "3": {
+                        "type": "hm",
+                        "attention": false,
+                        "hrTime": "2 Days",
+                        "hmTime": "2 Days",
+                        "title": "Technical Adviser",
+                        "classification": "GR02",
+                        "manager": "Rebecca Appleby",
+                        "created": "2019-MAY-02",
+                        "published": "2019-DEC-21",
+                        "closed": "2020-JAN-04",
+                        "status": "published",
+                        "advisers": {}
+                    },
+                    "4": {
+                        "type": "hm",
+                        "attention": true,
+                        "hrTime": "12 Days",
+                        "hmTime": "8 Days",
+                        "title": "Talent Management Expert",
+                        "classification": "BS01",
+                        "manager": "Cassandra Kane",
+                        "created": "2019-FEB-13",
+                        "published": "2019-DEC-21",
+                        "closed": "2020-JAN-04",
+                        "status": "closed",
+                        "advisers": {}
+                    },
+                    "5": {
+                        "type": "hm",
+                        "attention": false,
+                        "hrTime": "4 Days",
+                        "hmTime": "3 Days",
+                        "title": "Currency Expert",
+                        "classification": "LK08",
+                        "manager": "Franklin Morrison",
+                        "created": "2019-JUN-23",
+                        "published": "2019-DEC-21",
+                        "closed": "2020-JAN-04",
+                        "status": "complete",
+                        "advisers": {}
+                    }
+                } %}
+                {% for job in myJobs %}
+                    {% include "templates/job-action.twig" with {"job": job} %}
+                {% endfor %}
 
             </div>
 
