@@ -2,27 +2,30 @@
     <div data-c-card data-c-radius="rounded" data-c-background="white(100)">
         <a href="" title="">
             <div data-c-background="black(90)" data-c-padding="all(normal)">
-                <p data-c-font-size="h4" data-c-colour="white" data-c-margin="bottom(quarter)" data-c-font-style="underline">{{ job.classification }} - {{ job.title }}</p>
-                <p data-c-colour="white" data-c-font-size="small">Created: {{ job.created }}</p>
-            </div>
-            <div data-c-padding="all(normal)">
                 <div data-c-grid="gutter middle">
-                    <div data-c-grid-item="base(2of3)">
-                        <p data-c-color="black"><span data-c-color="c2">Hiring Manager:</span> {{ job.manager }}</p>
+                    <div data-c-grid-item="base(1of1)">
+                        <p data-c-font-size="h4" data-c-colour="white" data-c-font-style="underline">{{ job.classification }} - {{ job.title }}</p>
                     </div>
-                    <div data-c-grid-item="base(1of3)" data-c-align="base(right)">
-                        <div data-c-tag="c1" data-c-font-size="small" data-c-radius="pill">
+                    <div data-c-grid-item="base(1of2)">
+                        <p data-c-colour="white" data-c-font-size="small">Created: {{ job.created }}</p>
+                    </div>
+                    <div data-c-grid-item="base(1of2)" data-c-align="base(right)">
+                        <span data-c-color="white" data-c-border="all(thin, solid, white)" data-c-padding="tb(quarter) rl(half)" data-c-font-size="small" data-c-radius="pill">
                             {{ job.status|title }}
-                        </div>
+                        </span>
                     </div>
                 </div>
             </div>
-            <div data-c-padding="all(normal)" data-c-border="top(thin, solid, gray)">
+            <div data-c-padding="all(normal)">
+                <p data-c-color="black" data-c-margin="bottom(normal)">Hiring Manager: {{ job.manager }}</p>
                 {% if job.advisers is empty %}
                     <p data-c-color="stop">Unclaimed</p>
                 {% else %}
-                    <p data-c-color="black"><span data-c-color="c2">HR Advisers:</span> {% for adviser in job.advisers %}{{ adviser }}{% if loop.last %}{% else %}, {% endif %}{% endfor %}</p>
+                    <p data-c-color="black">HR Advisers: {% for adviser in job.advisers %}{{ adviser }}{% if loop.last %}{% else %}, {% endif %}{% endfor %}</p>
                 {% endif %}
+            </div>
+            <div data-c-padding="all(normal)" data-c-border="top(thin, solid, c1)" data-c-align="base(right)">
+                <span data-c-color="c1">+ <span data-c-font-style="underline">Claim This Job</span></span>
             </div>
         </a>
     </div>

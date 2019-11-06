@@ -122,7 +122,13 @@ $clone-grid-gutter: $clone-padding;
     // Your custom CSS goes here.
     .tc-hr-job-card {
         a {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
             text-decoration: none;
+            >div:nth-child(2) {
+                flex: 1;
+            }
         }
     }
     .pulse {
