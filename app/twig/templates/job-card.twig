@@ -1,7 +1,7 @@
 <div data-c-grid-item="tp(1of2) tl(1of3) equal-col" class="tc-hr-job-card">
     <div data-c-card data-c-radius="rounded" data-c-background="white(100)">
         <a href="" title="">
-            <div data-c-background="black(90)" data-c-padding="all(normal)">
+            <div data-c-background="black(100)" data-c-padding="all(normal)">
                 <div data-c-grid="gutter middle">
                     <div data-c-grid-item="base(1of1)">
                         <p data-c-font-size="h4" data-c-colour="white" data-c-font-style="underline">{{ job.classification }} - {{ job.title }}</p>
@@ -24,8 +24,8 @@
                     <p data-c-color="black">HR Advisers: {% for adviser in job.advisers %}{{ adviser }}{% if loop.last %}{% else %}, {% endif %}{% endfor %}</p>
                 {% endif %}
             </div>
-            <div data-c-padding="all(normal)" data-c-border="top(thin, solid, c1)" data-c-align="base(right)">
-                <span data-c-color="c1">+ <span data-c-font-style="underline">Claim This Job</span></span>
+            <div data-c-padding="all(normal)" data-c-border="top(thin, solid, black)" data-c-align="base(right)">
+                <span data-c-color="black">+ <span data-c-font-style="underline">Claim This Job</span></span>
             </div>
         </a>
     </div>
