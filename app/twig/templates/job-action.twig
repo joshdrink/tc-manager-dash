@@ -1,79 +1,84 @@
-<div data-c-card data-c-background="white(100)" data-c-radius="rounded" data-tc-status="{{ job.status }}" data-c-padding="all(normal)" data-c-margin="bottom(normal)">
+<div data-c-card data-c-background="white(100)" data-c-radius="rounded" data-tc-status="{{ job.status }}" data-c-padding="all(1)" data-c-margin="bottom(1)">
     <div data-c-grid="gutter middle">
         <div data-c-grid-item="tl(5of10)">
-            <h2 data-c-margin="bottom(normal)" data-c-font-size="h3">{{ job.classification }} - <span data-c-font-weight="bold" data-c-margin="right(normal)">{{ job.title }}</span><span {% if job.status == "published" %}data-c-tag="go"{% else %}data-c-tag="c1"{% endif %} data-c-font-size="small" data-c-radius="pill" data-c-margin="right(half)">{{ job.status|title }}</span></h2>
+            <h2 data-c-margin="bottom(.5)" data-c-font-size="h3">{{ job.classification }} - <span data-c-font-weight="bold" data-c-margin="right(1)">{{ job.title }}</span><span {% if job.status == "published" %}data-c-tag="go"{% else %}data-c-tag="c1"{% endif %} data-c-font-size="small" data-c-radius="pill" data-c-margin="right(.5)">{{ job.status|title }}</span></h2>
             {% if job.type == "hr" %}
-                <p data-c-font-size="small" data-c-margin="top(normal)">
+                <p data-c-font-size="small" data-c-margin="bottom(.5)">Hiring Manager: {{ job.manager }}</p>
+            {% elseif job.type == "hm" %}
+                <p data-c-font-size="small" data-c-margin="bottom(.5)">HR Advisers: {{ job.manager }}</p>
+            {% endif %}
+            {% if job.type == "hr" %}
+                <p data-c-font-size="small" data-c-margin="top(.5)">
                     {% if job.status == "draft" %}
-                        <a href="" title="" data-c-margin="right(half)">View Draft</a>
-                        <a href="" title="" data-c-margin="right(half)">Preview Poster</a>
-                        <a href="" title="" data-c-margin="right(half)">View Screening Plan</a>
-                        <span data-c-color="gray" data-c-margin="right(half)">No Applicants</span>
+                        <a href="" title="" data-c-margin="right(.5)">View Draft</a>
+                        <a href="" title="" data-c-margin="right(.5)">Preview Poster</a>
+                        <a href="" title="" data-c-margin="right(.5)">View Screening Plan</a>
+                        <span data-c-color="gray" data-c-margin="right(.5)">No Applicants</span>
                     {% elseif job.status == "in review" %}
-                        <a href="" title="" data-c-margin="right(half)">View Draft</a>
-                        <a href="" title="" data-c-margin="right(half)">Preview Poster</a>
-                        <a href="" title="" data-c-margin="right(half)">View Screening Plan</a>
-                        <span data-c-color="gray" data-c-margin="right(half)">No Applicants</span>
+                        <a href="" title="" data-c-margin="right(.5)">View Draft</a>
+                        <a href="" title="" data-c-margin="right(.5)">Preview Poster</a>
+                        <a href="" title="" data-c-margin="right(.5)">View Screening Plan</a>
+                        <span data-c-color="gray" data-c-margin="right(.5)">No Applicants</span>
                     {% elseif job.status == "approved" %}
-                        <a href="" title="" data-c-margin="right(half)">View Draft</a>
-                        <a href="" title="" data-c-margin="right(half)">Preview Poster</a>
-                        <a href="" title="" data-c-margin="right(half)">View Screening Plan</a>
-                        <span data-c-color="gray" data-c-margin="right(half)">No Applicants</span>
+                        <a href="" title="" data-c-margin="right(.5)">View Draft</a>
+                        <a href="" title="" data-c-margin="right(.5)">Preview Poster</a>
+                        <a href="" title="" data-c-margin="right(.5)">View Screening Plan</a>
+                        <span data-c-color="gray" data-c-margin="right(.5)">No Applicants</span>
                     {% elseif job.status == "published" %}
-                        <span data-c-color="gray" data-c-margin="right(half)">View Draft</span>
-                        <a href="" title="" data-c-margin="right(half)">View Poster</a>
-                        <a href="" title="" data-c-margin="right(half)">View Screening Plan</a>
-                        <span data-c-color="gray" data-c-margin="right(half)">12 Applicants</span>
+                        <span data-c-color="gray" data-c-margin="right(.5)">View Draft</span>
+                        <a href="" title="" data-c-margin="right(.5)">View Poster</a>
+                        <a href="" title="" data-c-margin="right(.5)">View Screening Plan</a>
+                        <span data-c-color="gray" data-c-margin="right(.5)">12 Applicants</span>
                     {% elseif job.status == "closed" %}
-                        <span data-c-color="gray" data-c-margin="right(half)">View Draft</span>
-                        <a href="" title="" data-c-margin="right(half)">View Poster</a>
-                        <a href="" title="" data-c-margin="right(half)">View Screening Plan</a>
-                        <a href="" title="" data-c-margin="right(half)">34 Applicants</a>
+                        <span data-c-color="gray" data-c-margin="right(.5)">View Draft</span>
+                        <a href="" title="" data-c-margin="right(.5)">View Poster</a>
+                        <a href="" title="" data-c-margin="right(.5)">View Screening Plan</a>
+                        <a href="" title="" data-c-margin="right(.5)">34 Applicants</a>
                     {% elseif job.status == "complete" %}
-                        <span data-c-color="gray" data-c-margin="right(half)">View Draft</span>
-                        <a href="" title="" data-c-margin="right(half)">View Poster</a>
-                        <a href="" title="" data-c-margin="right(half)">View Screening Plan</a>
-                        <span data-c-color="gray" data-c-margin="right(half)">5 Applicants</span>
+                        <span data-c-color="gray" data-c-margin="right(.5)">View Draft</span>
+                        <a href="" title="" data-c-margin="right(.5)">View Poster</a>
+                        <a href="" title="" data-c-margin="right(.5)">View Screening Plan</a>
+                        <span data-c-color="gray" data-c-margin="right(.5)">5 Applicants</span>
                     {% endif %}
                 </p>
             {% elseif job.type == "hm" %}
-                <p data-c-font-size="small" data-c-margin="top(normal)">
+                <p data-c-font-size="small" data-c-margin="top(1)">
                     {% if job.status == "draft" %}
-                        <a href="" title="" data-c-margin="right(half)">Edit Job</a>
-                        <a href="" title="" data-c-margin="right(half)">Preview Poster</a>
-                        <a href="" title="" data-c-margin="right(half)">Edit Screening Plan</a>
-                        <span data-c-color="gray" data-c-margin="right(half)">No Applicants</span>
-                        <a href="" title="" data-c-margin="right(half)">Delete Poster</a>
+                        <a href="" title="" data-c-margin="right(.5)">Edit Job</a>
+                        <a href="" title="" data-c-margin="right(.5)">Preview Poster</a>
+                        <a href="" title="" data-c-margin="right(.5)">Edit Screening Plan</a>
+                        <span data-c-color="gray" data-c-margin="right(.5)">No Applicants</span>
+                        <a href="" title="" data-c-margin="right(.5)">Delete Poster</a>
                     {% elseif job.status == "in review" %}
-                        <a href="" title="" data-c-margin="right(half)">Edit Job</a>
-                        <a href="" title="" data-c-margin="right(half)">Preview Poster</a>
-                        <a href="" title="" data-c-margin="right(half)">Edit Screening Plan</a>
-                        <span data-c-color="gray" data-c-margin="right(half)">No Applicants</span>
-                        <a href="" title="" data-c-margin="right(half)">Delete Poster</a>
+                        <a href="" title="" data-c-margin="right(.5)">Edit Job</a>
+                        <a href="" title="" data-c-margin="right(.5)">Preview Poster</a>
+                        <a href="" title="" data-c-margin="right(.5)">Edit Screening Plan</a>
+                        <span data-c-color="gray" data-c-margin="right(.5)">No Applicants</span>
+                        <a href="" title="" data-c-margin="right(.5)">Delete Poster</a>
                     {% elseif job.status == "approved" %}
-                        <span data-c-color="gray" data-c-margin="right(half)">Edit Job</span>
-                        <a href="" title="" data-c-margin="right(half)">Preview Poster</a>
-                        <a href="" title="" data-c-margin="right(half)">Edit Screening Plan</a>
-                        <span data-c-color="gray" data-c-margin="right(half)">No Applicants</span>
-                        <a href="" title="" data-c-margin="right(half)">Delete Poster</a>
+                        <span data-c-color="gray" data-c-margin="right(.5)">Edit Job</span>
+                        <a href="" title="" data-c-margin="right(.5)">Preview Poster</a>
+                        <a href="" title="" data-c-margin="right(.5)">Edit Screening Plan</a>
+                        <span data-c-color="gray" data-c-margin="right(.5)">No Applicants</span>
+                        <a href="" title="" data-c-margin="right(.5)">Delete Poster</a>
                     {% elseif job.status == "published" %}
-                        <span data-c-color="gray" data-c-margin="right(half)">Edit Job</span>
-                        <a href="" title="" data-c-margin="right(half)">View Poster</a>
-                        <a href="" title="" data-c-margin="right(half)">Edit Screening Plan</a>
-                        <span data-c-color="gray" data-c-margin="right(half)">12 Applicants</span>
-                        <span data-c-color="gray" data-c-margin="right(half)">Delete Poster</span>
+                        <span data-c-color="gray" data-c-margin="right(.5)">Edit Job</span>
+                        <a href="" title="" data-c-margin="right(.5)">View Poster</a>
+                        <a href="" title="" data-c-margin="right(.5)">Edit Screening Plan</a>
+                        <span data-c-color="gray" data-c-margin="right(.5)">12 Applicants</span>
+                        <span data-c-color="gray" data-c-margin="right(.5)">Delete Poster</span>
                     {% elseif job.status == "closed" %}
-                        <span data-c-color="gray" data-c-margin="right(half)">Edit Job</span>
-                        <a href="" title="" data-c-margin="right(half)">View Poster</a>
-                        <a href="" title="" data-c-margin="right(half)">View Screening Plan</a>
-                        <a href="" title="" data-c-margin="right(half)">34 Applicants</a>
-                        <span data-c-color="gray" data-c-margin="right(half)">Delete Poster</span>
+                        <span data-c-color="gray" data-c-margin="right(.5)">Edit Job</span>
+                        <a href="" title="" data-c-margin="right(.5)">View Poster</a>
+                        <a href="" title="" data-c-margin="right(.5)">View Screening Plan</a>
+                        <a href="" title="" data-c-margin="right(.5)">34 Applicants</a>
+                        <span data-c-color="gray" data-c-margin="right(.5)">Delete Poster</span>
                     {% elseif job.status == "complete" %}
-                        <span data-c-color="gray" data-c-margin="right(half)">Edit Job</span>
-                        <a href="" title="" data-c-margin="right(half)">View Poster</a>
-                        <a href="" title="" data-c-margin="right(half)">View Screening Plan</a>
-                        <span data-c-color="gray" data-c-margin="right(half)">5 Applicants</span>
-                        <span data-c-color="gray" data-c-margin="right(half)">Delete Poster</span>
+                        <span data-c-color="gray" data-c-margin="right(.5)">Edit Job</span>
+                        <a href="" title="" data-c-margin="right(.5)">View Poster</a>
+                        <a href="" title="" data-c-margin="right(.5)">View Screening Plan</a>
+                        <span data-c-color="gray" data-c-margin="right(.5)">5 Applicants</span>
+                        <span data-c-color="gray" data-c-margin="right(.5)">Delete Poster</span>
                     {% endif %}
                 </p>
             {% endif %}
@@ -88,10 +93,10 @@
                             <p data-c-font-size="small">Time with Manager: {{ job.hmTime }}</p>
                             {% if job.attention == true %}
                                 <p data-c-font-size="small" class="pulse">Time with You: <span>{{ job.hrTime }}</span></p>
-                                <a href="TO COMMENTS HASH" title="View new activity on this job." data-c-font-size="small" data-c-margin="top(half)" data-c-color="stop">New Activity (3)</a>
+                                <a href="TO COMMENTS HASH" title="View new activity on this job." data-c-font-size="small" data-c-margin="top(.5)" data-c-color="stop">New Activity (3)</a>
                             {% else %}
                                 <p data-c-font-size="small">Time with You: <span>{{ job.hrTime }}</span></p>
-                                <p data-c-font-size="small" data-c-margin="top(half)" data-c-color="gray">No New Activity</p>
+                                <p data-c-font-size="small" data-c-margin="top(.5)" data-c-color="gray">No New Activity</p>
                             {% endif %}
                         </div>
                     {% elseif job.status == "approved" %}
@@ -99,10 +104,10 @@
                             <p data-c-font-size="small">Time with Manager: {{ job.hmTime }}</p>
                             {% if job.attention == true %}
                                 <p data-c-font-size="small" class="pulse">Time with You: <span>{{ job.hrTime }}</span></p>
-                                <a href="TO COMMENTS HASH" title="View new activity on this job." data-c-font-size="small" data-c-margin="top(half)" data-c-color="stop">New Activity (3)</a>
+                                <a href="TO COMMENTS HASH" title="View new activity on this job." data-c-font-size="small" data-c-margin="top(.5)" data-c-color="stop">New Activity (3)</a>
                             {% else %}
                                 <p data-c-font-size="small">Time with You: <span>{{ job.hrTime }}</span></p>
-                                <p data-c-font-size="small" data-c-margin="top(half)" data-c-color="gray">No New Activity</p>
+                                <p data-c-font-size="small" data-c-margin="top(.5)" data-c-color="gray">No New Activity</p>
                             {% endif %}
                         </div>
                     {% elseif job.status == "published" %}
@@ -110,10 +115,10 @@
                             <p data-c-font-size="small">Time with Manager: {{ job.hmTime }}</p>
                             {% if job.attention == true %}
                                 <p data-c-font-size="small" class="pulse">Time with You: <span>{{ job.hrTime }}</span></p>
-                                <a href="TO COMMENTS HASH" title="View new activity on this job." data-c-font-size="small" data-c-margin="top(half)" data-c-color="stop">New Activity (3)</a>
+                                <a href="TO COMMENTS HASH" title="View new activity on this job." data-c-font-size="small" data-c-margin="top(.5)" data-c-color="stop">New Activity (3)</a>
                             {% else %}
                                 <p data-c-font-size="small">Time with You: <span>{{ job.hrTime }}</span></p>
-                                <p data-c-font-size="small" data-c-margin="top(half)" data-c-color="gray">No New Activity</p>
+                                <p data-c-font-size="small" data-c-margin="top(.5)" data-c-color="gray">No New Activity</p>
                             {% endif %}
                         </div>
                     {% elseif job.status == "closed" %}
@@ -121,10 +126,10 @@
                             <p data-c-font-size="small">Time with Manager: {{ job.hmTime }}</p>
                             {% if job.attention == true %}
                                 <p data-c-font-size="small" class="pulse">Time with You: <span>{{ job.hrTime }}</span></p>
-                                <a href="TO COMMENTS HASH" title="View new activity on this job." data-c-font-size="small" data-c-margin="top(half)" data-c-color="stop">New Activity (3)</a>
+                                <a href="TO COMMENTS HASH" title="View new activity on this job." data-c-font-size="small" data-c-margin="top(.5)" data-c-color="stop">New Activity (3)</a>
                             {% else %}
                                 <p data-c-font-size="small">Time with You: <span>{{ job.hrTime }}</span></p>
-                                <p data-c-font-size="small" data-c-margin="top(half)" data-c-color="gray">No New Activity</p>
+                                <p data-c-font-size="small" data-c-margin="top(.5)" data-c-color="gray">No New Activity</p>
                             {% endif %}
                         </div>
                     {% elseif job.status == "complete" %}
@@ -132,10 +137,10 @@
                             <p data-c-font-size="small">Time with Manager: {{ job.hmTime }}</p>
                             {% if job.attention == true %}
                                 <p data-c-font-size="small" class="pulse">Time with You: <span>{{ job.hrTime }}</span></p>
-                                <a href="TO COMMENTS HASH" title="View new activity on this job." data-c-font-size="small" data-c-margin="top(half)" data-c-color="stop">New Activity (3)</a>
+                                <a href="TO COMMENTS HASH" title="View new activity on this job." data-c-font-size="small" data-c-margin="top(.5)" data-c-color="stop">New Activity (3)</a>
                             {% else %}
                                 <p data-c-font-size="small">Time with You: <span>{{ job.hrTime }}</span></p>
-                                <p data-c-font-size="small" data-c-margin="top(half)" data-c-color="gray">No New Activity</p>
+                                <p data-c-font-size="small" data-c-margin="top(.5)" data-c-color="gray">No New Activity</p>
                             {% endif %}
                         </div>
                     {% endif %}
