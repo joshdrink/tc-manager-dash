@@ -89,30 +89,34 @@
                     <div data-c-grid-item="base(1of1)">
                         <p 
                             data-c-font-size="small"
+                            class="tc-timer"
                             {% if job.hmTime == 0 %}
                                 data-c-color="gray"
                             {% endif %}
                         >
-                                Time with Manager: <span>{% if job.hmTime > 0 %}{{ job.hmTime }} Days{% else %}N/A{% endif %}</span>
+                            <i class="material-icons">pause_circle_filled</i>Time with Manager: <span>{% if job.hmTime > 0 %}{{ job.hmTime }} Days{% else %}N/A{% endif %}</span>
                         </p>
                         <p 
                             data-c-font-size="small"
                             {% if job.attention == true %}
-                                class="pulse"
+                                class="tc-timer active"
+                            {% else %}
+                                class="tc-timer"
                             {% endif %}
                             {% if job.hrTime == 0 %}
                                 data-c-color="gray"
                             {% endif %}
                         >
-                                Time with You: <span>{% if job.hrTime > 0 %}{{ job.hrTime }} Days{% else %}N/A{% endif %}</span>
+                            {% if job.attention == true %}<i class="material-icons">access_time</i>{% else %}<i class="material-icons">pause_circle_filled</i>{% endif %}Time with You: <span>{% if job.hrTime > 0 %}{{ job.hrTime }} Days{% else %}N/A{% endif %}</span>
                         </p>
                         <p 
                             data-c-font-size="small"
+                            class="tc-timer"
                             {% if job.tcTime == 0 %}
                                 data-c-color="gray"
                             {% endif %}
                         >
-                                Time with Talent Cloud: <span>{% if job.tcTime > 0 %}{{ job.tcTime }} Days{% else %}N/A{% endif %}</span>
+                            <i class="material-icons">pause_circle_filled</i>Time with Talent Cloud: <span>{% if job.tcTime > 0 %}{{ job.tcTime }} Days{% else %}N/A{% endif %}</span>
                         </p>
                         <p data-c-margin="top(.5)" data-c-font-size="small">
                             {% if job.attention == true %}
@@ -127,29 +131,33 @@
                         <p 
                             data-c-font-size="small"
                             {% if job.attention == true %}
-                                class="pulse"
+                                class="tc-timer active"
+                            {% else %}
+                                class="tc-timer"
                             {% endif %}
                             {% if job.hmTime == 0 %}
                                 data-c-color="gray"
                             {% endif %}
                         >
-                                Time with You: <span>{% if job.hmTime > 0 %}{{ job.hmTime }} Days{% else %}N/A{% endif %}</span>
+                            {% if job.attention == true %}<i class="material-icons">access_time</i>{% else %}<i class="material-icons">pause_circle_filled</i>{% endif %}Time with You: <span>{% if job.hmTime > 0 %}{{ job.hmTime }} Days{% else %}N/A{% endif %}</span>
                         </p>
                         <p 
                             data-c-font-size="small"
+                            class="tc-timer"
                             {% if job.hrTime == 0 %}
                                 data-c-color="gray"
                             {% endif %}
                         >
-                                Time with HR: <span>{% if job.hrTime > 0 %}{{ job.hrTime }} Days{% else %}N/A{% endif %}</span>
+                            <i class="material-icons">pause_circle_filled</i>Time with HR: <span>{% if job.hrTime > 0 %}{{ job.hrTime }} Days{% else %}N/A{% endif %}</span>
                         </p>
                         <p 
                             data-c-font-size="small"
+                            class="tc-timer"
                             {% if job.tcTime == 0 %}
                                 data-c-color="gray"
                             {% endif %}
                         >
-                                Time with Talent Cloud: <span>{% if job.tcTime > 0 %}{{ job.tcTime }} Days{% else %}N/A{% endif %}</span>
+                            <i class="material-icons">pause_circle_filled</i>Time with Talent Cloud: <span>{% if job.tcTime > 0 %}{{ job.tcTime }} Days{% else %}N/A{% endif %}</span>
                         </p>
                         <p data-c-margin="top(.5)" data-c-font-size="small">
                             {% if job.attention == true %}

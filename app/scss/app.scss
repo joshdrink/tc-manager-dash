@@ -131,14 +131,29 @@ $clone-grid-gutter: $clone-padding;
             }
         }
     }
-    .pulse {
-        span {
-            animation: pulse 1s ease infinite;
+    .tc-timer {
+        i {
+            color: $clone-gray;
+            margin-top: -.15rem;
+            margin-right: .3rem;
+            vertical-align: middle;
+        }
+        &.active {
+            color: $clone-c2;
+            i {
+                color: $clone-c2;
+                animation: pulse 1s ease infinite;
+           }
+        }
+        &[data-c-font-size="small"] {
+            i {
+                font-size: $clone-font-scale-small;
+            }
         }
     }
 }
 @keyframes pulse {
-    0%   {color: $clone-black}
-    50%  {color: $clone-stop}
-    100% {color: $clone-black}
+    0%   {opacity: 1}
+    50%  {opacity: .3}
+    100% {opacity: 1}
 }
